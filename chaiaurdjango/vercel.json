@@ -1,15 +1,22 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "chaiaurdjango/wsgi.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "chaiaurdjango/wsgi.py"
-      }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "chaiaurdjango/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      
+    }
+  ],
+  "routes": [
+    
+    {
+      "src": "/(.*)",
+      "dest": "chaiaurdjango/wsgi.py"
+    }
+  ]
   }
