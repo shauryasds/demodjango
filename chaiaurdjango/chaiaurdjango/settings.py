@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'chaiaurdjango.wsgi.application'
+WSGI_APPLICATION = 'chaiaurdjango.wsgi.app'
 
 
 # Database
